@@ -12,7 +12,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBOutlet weak var emTableView: UITableView!
     
-    var emojis = ["🔪","🚬","🔫","🚽","🙊","🙉","🙈","😱"]
+    var emojis : [Emoji] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +20,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         emTableView.dataSource = self
         emTableView.delegate = self
+        emojis = makeEmojiArray()
         
     }
     
@@ -29,9 +30,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print(indexPath.row)
         let cell = UITableViewCell()
-        cell.textLabel?.text = emojis[indexPath.row]
+        let emoji = emojis[indexPath.row]
+        cell.textLabel?.text = emoji.stringEmoji
         return cell
     }
     
@@ -44,7 +45,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let DefVC = segue.destination as! DefinitionViewController
         
-        DefVC.emoji = sender as! String
+        DefVC.emoji = sender as! Emoji
         
     }
 
@@ -53,6 +54,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Dispose of any resources that can be recreated.
     }
 
+    func makeEmojiArray() -> [Emoji]{
+        let emoji1 = Emoji()
+        emoji1.stringEmoji = "🔪"
+        emoji1.definition = "knifey knife stabby stab"
+        emoji1.category = "Weapon"
+        emoji1.creationYear = "2002"
+        
+        let emoji2 = Emoji()
+        emoji2.stringEmoji = "🚬"
+        emoji2.definition = "smokey smoke smoke"
+        emoji2.category = "thing"
+        emoji2.creationYear = "2010"
+        
+        return [emoji1, emoji2]
+        
+    }
 
 }
 

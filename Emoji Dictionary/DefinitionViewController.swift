@@ -10,50 +10,26 @@ import UIKit
 
 class DefinitionViewController: UIViewController {
     
-    var emoji = "NO EMOJI"
+    var emoji = Emoji()
 
     @IBOutlet weak var bigEmoji: UILabel!
     
     @IBOutlet weak var emojiDefLabel: UILabel!
+    
+    @IBOutlet weak var emojiCategoryLabel: UILabel!
+    
+    @IBOutlet weak var emojiYearLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        bigEmoji.text = emoji
-        
-        if emoji == "🔪"{
-          emojiDefLabel.text = "super sharp knife"
-        }
-        
-        if emoji == "🔫"{
-            emojiDefLabel.text = "blam blam blam"
-        }
-        
-        if emoji == "🚬"{
-            emojiDefLabel.text = "smoke it up"
-        }
-        
-        if emoji == "🚽"{
-            emojiDefLabel.text = "Flushhhhh"
-        }
-        
-        if emoji == "🙈"{
-            emojiDefLabel.text = "See No Evil"
-        }
-        
-        if emoji == "🙉"{
-            emojiDefLabel.text = "Hear No Evil"
-        }
-        
-        if emoji == "🙊"{
-            emojiDefLabel.text = "Speak No Evil"
-        }
-        
-        if emoji == "😱"{
-            emojiDefLabel.text = "Whaaaa"
-        }
+        bigEmoji.text = emoji.stringEmoji
+        emojiDefLabel.text = emoji.definition
+        emojiCategoryLabel.text = "Category: \(emoji.category)"
+        emojiYearLabel.text = "Year: \(emoji.creationYear)"
+
         
         
     }

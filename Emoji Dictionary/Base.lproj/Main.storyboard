@@ -62,18 +62,34 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category: Places" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4vj-EJ-Tut">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birth Year: 2011" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YrT-gQ-Lhp">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ggX-ar-BGW" firstAttribute="top" secondItem="I9o-xv-51i" secondAttribute="bottom" constant="52" id="352-T5-koS"/>
+                            <constraint firstItem="YrT-gQ-Lhp" firstAttribute="top" secondItem="4vj-EJ-Tut" secondAttribute="bottom" constant="20" id="3xu-vw-GdR"/>
+                            <constraint firstItem="4vj-EJ-Tut" firstAttribute="top" secondItem="ggX-ar-BGW" secondAttribute="bottom" constant="20" id="5bb-8n-0Zd"/>
+                            <constraint firstItem="YrT-gQ-Lhp" firstAttribute="centerX" secondItem="eJk-BK-dmn" secondAttribute="centerX" id="Ql8-IJ-tYt"/>
                             <constraint firstItem="I9o-xv-51i" firstAttribute="top" secondItem="0ig-p4-34A" secondAttribute="bottom" constant="50" id="SFq-Qc-0TG"/>
                             <constraint firstItem="ggX-ar-BGW" firstAttribute="centerX" secondItem="eJk-BK-dmn" secondAttribute="centerX" id="eSZ-Go-kz6"/>
+                            <constraint firstItem="4vj-EJ-Tut" firstAttribute="centerX" secondItem="eJk-BK-dmn" secondAttribute="centerX" id="f9D-Gy-sb2"/>
                             <constraint firstItem="I9o-xv-51i" firstAttribute="centerX" secondItem="eJk-BK-dmn" secondAttribute="centerX" id="onr-hd-WpM"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bigEmoji" destination="I9o-xv-51i" id="49g-OQ-NaN"/>
+                        <outlet property="emojiCategoryLabel" destination="4vj-EJ-Tut" id="Wjf-Z1-SJE"/>
                         <outlet property="emojiDefLabel" destination="ggX-ar-BGW" id="W5D-fM-nYL"/>
+                        <outlet property="emojiYearLabel" destination="YrT-gQ-Lhp" id="YSk-6r-afV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ljn-tG-a1x" userLabel="First Responder" sceneMemberID="firstResponder"/>
